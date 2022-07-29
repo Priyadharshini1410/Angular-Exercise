@@ -6,6 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'example';
- 
+  title:string='helloworld';
+  
+  /*heading:string='Interpolation';
+  getname():string{
+    return 'Priyadharshini'
+  }
+  image:string='byju.jfif'
+
+  propertybinding:string='Property Binding'
+  btnclick:boolean=true
+  constructor() { }
+  ngOnInit(): void {
+    setTimeout(()=>{
+      this.btnclick=false;
+    },2000);
+  }*/
+
+
 }

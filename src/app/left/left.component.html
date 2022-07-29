@@ -1,0 +1,10 @@
+<p>left component creation</p>
+<div *ngIf="books; then bookavailable; else nobookavailable">
+    book Available exist
+</div>
+<ng-template #bookavailable>
+    book available
+</ng-template>
+<ng-template #nobookavailable>
+    No book available
+</ng-template>
