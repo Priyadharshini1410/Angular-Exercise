@@ -1,0 +1,9 @@
+.form-control.ng-touched.ng-invalid{
+    border:2px solid red;
+}
+.alert{
+    color:red;
+}
+h5{
+    color:brown;
+}

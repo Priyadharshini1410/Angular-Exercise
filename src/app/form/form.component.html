@@ -1,0 +1,108 @@
+<h1>TEMPLATE DRIVEN FORM</h1>
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div ngModelGroup="contact">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-6">
+                <div class="form-group">
+                    <h5><label for="firstname">FIRSTNAME</label><br></h5>
+                    <input required minlength="2" maxlength="10"  ngModel name="firstname"
+                        #firstname="ngModel" (change)="log(firstname)" id="firstname" type="text" class="form-control">
+                    <div class="alert alert-danger" *ngIf="firstname.touched && firstname.invalid">Enter the firstname
+                        <div *ngIf="firstname.value.length"> Enter more than 5 characters</div>
+                        <div *ngIf="firstname.value.length">Enter below 10 characters</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4 col-md-6">
+        <div class="form-group">
+            <h5><label for="age">AGE</label><br></h5>
+            <input required ngModel name="age" #age="ngModel"  id="age" type="text"
+                class="form-control">
+            <div class="alert alert-danger" *ngIf="age.touched && !age.valid">Enter the age</div>
+        </div>
+        </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-md-4 col-md-6">
+        <div class="form-group">
+            <h5><label for="dob">DOB</label></h5>
+            <input required ngModel name="dob" #dob="ngModel" id="dob" type="text"
+                class="form-control">
+            <div class="alert alert-danger" *ngIf="dob.touched && !dob.valid">Enter the date of birth</div>
+        </div>
+    </div>
+</div>
+        
+
+        <div class="row">
+            <div class="col-md-4 col-md-6">
+        <div class="form-group">
+            <h5><label for="gender">GENDER</label><br></h5>
+            <input required ngModel value="male" name="gender" #gender="ngModel" id="gender"
+                type="radio" class="form-control">Male
+            <input required ngModel value="female" name="gender" #gender="ngModel" id="gender"
+                type="radio" class="form-control">Female
+            <div class="alert alert-danger" *ngIf="gender.touched && !gender.valid">Select the gender</div>
+        </div>
+    </div>
+</div>
+        
+
+        <div class="row">
+            <div class="col-md-4 col-md-6">
+        <div class="form-group">
+            <h5><label for="country">COUNTRY</label><br></h5>
+            <select required ngModel name="country" #country="ngModel" id="country"
+                type="checkbox" class="form-control">
+                <option *ngFor="let c of countrylist">
+                    {{c.countryname}}
+                </option>
+            </select>
+            <div class="alert alert-success" *ngIf="country.touched && !country.valid">Select the country</div>
+        </div>
+    </div>
+</div>
+    
+
+        <div class="row">
+            <div class="col-md-4 col-md-6">
+        <div class="form-group">
+            <h4><label for="comment">COMMENT</label><br></h4>
+            <textarea id="comment" cols="30" row="10" class="form-control"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 col-md-2">
+<div class="form-group">
+    <input type="checkbox" id="check" name="vehicle1" value="check" class="form-control">
+    <label for="check">Agree and Submit</label><br>
+    
+        <div class="alert alert-success" *ngIf="country.touched && !country.valid">Select the country</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-4 col-md-6">
+        <button class="btn btn-primary" [disabled]="!f.valid">submit</button>
+    </div>
+</div>
+</div>
+
+
+</form>

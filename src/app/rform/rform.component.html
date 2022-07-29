@@ -1,0 +1,30 @@
+<h1>REACTIVE FORM</h1>
+<form [formGroup]="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-6">
+                <div class="form-group">
+                    <label for="username">username</label>
+                    <input formControlName="username" id="username" type="text" class="form-control">
+                    <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">username is required
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-md-6">
+                <div class="form-group">
+                    <label for="password">password</label>
+                    <input formControlName="password" id="password" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-md-6">
+                <button class="btn btn-primary" type="submit">signin</button>
+            </div>
+        </div>
+    </div>
+</form>
